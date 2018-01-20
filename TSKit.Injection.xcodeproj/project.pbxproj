@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0057DDA920139FF5002B8429 /* InjectionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDA820139FF5002B8429 /* InjectionRule.swift */; };
+		0057DDAB2013A115002B8429 /* InjectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDAA2013A115002B8429 /* InjectionError.swift */; };
+		0057DDAD2013A136002B8429 /* InjectionPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDAC2013A136002B8429 /* InjectionPreset.swift */; };
+		00C2C4311FE5C3F300721731 /* TSKit_Injection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2C4271FE5C3F200721731 /* TSKit_Injection.framework */; };
+		00C2C4361FE5C3F300721731 /* TSKit_InjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4351FE5C3F300721731 /* TSKit_InjectionTests.swift */; };
+		00C2C4381FE5C3F300721731 /* TSKit_Injection.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C2C42A1FE5C3F200721731 /* TSKit_Injection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00C2C4E61FE5C51500721731 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4E51FE5C51500721731 /* Injector.swift */; };
+		00CCB2841FE6BD4E00F1E75C /* TSKit_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CCB2851FE6BD4E00F1E75C /* TSKit_Log.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00C2C4321FE5C3F300721731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C2C41E1FE5C3F200721731 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00C2C4261FE5C3F200721731;
+			remoteInfo = TSKit.Injection;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0057DDA820139FF5002B8429 /* InjectionRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionRule.swift; sourceTree = "<group>"; };
+		0057DDAA2013A115002B8429 /* InjectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionError.swift; sourceTree = "<group>"; };
+		0057DDAC2013A136002B8429 /* InjectionPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionPreset.swift; sourceTree = "<group>"; };
+		00C2C4271FE5C3F200721731 /* TSKit_Injection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSKit_Injection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C2C42A1FE5C3F200721731 /* TSKit_Injection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKit_Injection.h; sourceTree = "<group>"; };
+		00C2C42B1FE5C3F200721731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C2C4301FE5C3F300721731 /* TSKit.InjectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSKit.InjectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C2C4351FE5C3F300721731 /* TSKit_InjectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSKit_InjectionTests.swift; sourceTree = "<group>"; };
+		00C2C4371FE5C3F300721731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C2C4E51FE5C51500721731 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		00CCB2851FE6BD4E00F1E75C /* TSKit_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TSKit_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00C2C4231FE5C3F200721731 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CCB2841FE6BD4E00F1E75C /* TSKit_Log.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C2C42D1FE5C3F300721731 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2C4311FE5C3F300721731 /* TSKit_Injection.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00C2C41D1FE5C3F200721731 = {
+			isa = PBXGroup;
+			children = (
+				00C2C4291FE5C3F200721731 /* TSKit.Injection */,
+				00C2C4341FE5C3F300721731 /* TSKit.InjectionTests */,
+				00C2C4281FE5C3F200721731 /* Products */,
+				00CCB2831FE6BD4E00F1E75C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		00C2C4281FE5C3F200721731 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00C2C4271FE5C3F200721731 /* TSKit_Injection.framework */,
+				00C2C4301FE5C3F300721731 /* TSKit.InjectionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00C2C4291FE5C3F200721731 /* TSKit.Injection */ = {
+			isa = PBXGroup;
+			children = (
+				00C2C4E21FE5C4F400721731 /* Sources */,
+				00C2C42A1FE5C3F200721731 /* TSKit_Injection.h */,
+				00C2C42B1FE5C3F200721731 /* Info.plist */,
+			);
+			path = TSKit.Injection;
+			sourceTree = "<group>";
+		};
+		00C2C4341FE5C3F300721731 /* TSKit.InjectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				00C2C4351FE5C3F300721731 /* TSKit_InjectionTests.swift */,
+				00C2C4371FE5C3F300721731 /* Info.plist */,
+			);
+			path = TSKit.InjectionTests;
+			sourceTree = "<group>";
+		};
+		00C2C4E21FE5C4F400721731 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				00C2C4E51FE5C51500721731 /* Injector.swift */,
+				0057DDA820139FF5002B8429 /* InjectionRule.swift */,
+				0057DDAA2013A115002B8429 /* InjectionError.swift */,
+				0057DDAC2013A136002B8429 /* InjectionPreset.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		00CCB2831FE6BD4E00F1E75C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00CCB2851FE6BD4E00F1E75C /* TSKit_Log.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		00C2C4241FE5C3F200721731 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2C4381FE5C3F300721731 /* TSKit_Injection.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		00C2C4261FE5C3F200721731 /* TSKit.Injection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C2C43B1FE5C3F300721731 /* Build configuration list for PBXNativeTarget "TSKit.Injection" */;
+			buildPhases = (
+				00C2C4221FE5C3F200721731 /* Sources */,
+				00C2C4231FE5C3F200721731 /* Frameworks */,
+				00C2C4241FE5C3F200721731 /* Headers */,
+				00C2C4251FE5C3F200721731 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TSKit.Injection;
+			productName = TSKit.Injection;
+			productReference = 00C2C4271FE5C3F200721731 /* TSKit_Injection.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		00C2C42F1FE5C3F300721731 /* TSKit.InjectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C2C43E1FE5C3F300721731 /* Build configuration list for PBXNativeTarget "TSKit.InjectionTests" */;
+			buildPhases = (
+				00C2C42C1FE5C3F300721731 /* Sources */,
+				00C2C42D1FE5C3F300721731 /* Frameworks */,
+				00C2C42E1FE5C3F300721731 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00C2C4331FE5C3F300721731 /* PBXTargetDependency */,
+			);
+			name = TSKit.InjectionTests;
+			productName = TSKit.InjectionTests;
+			productReference = 00C2C4301FE5C3F300721731 /* TSKit.InjectionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00C2C41E1FE5C3F200721731 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Arkadiy Glushchevsky";
+				TargetAttributes = {
+					00C2C4261FE5C3F200721731 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					00C2C42F1FE5C3F300721731 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 00C2C4211FE5C3F200721731 /* Build configuration list for PBXProject "TSKit.Injection" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 00C2C41D1FE5C3F200721731;
+			productRefGroup = 00C2C4281FE5C3F200721731 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00C2C4261FE5C3F200721731 /* TSKit.Injection */,
+				00C2C42F1FE5C3F300721731 /* TSKit.InjectionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00C2C4251FE5C3F200721731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C2C42E1FE5C3F300721731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00C2C4221FE5C3F200721731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2C4E61FE5C51500721731 /* Injector.swift in Sources */,
+				0057DDAB2013A115002B8429 /* InjectionError.swift in Sources */,
+				0057DDAD2013A136002B8429 /* InjectionPreset.swift in Sources */,
+				0057DDA920139FF5002B8429 /* InjectionRule.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C2C42C1FE5C3F300721731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2C4361FE5C3F300721731 /* TSKit_InjectionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00C2C4331FE5C3F300721731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00C2C4261FE5C3F200721731 /* TSKit.Injection */;
+			targetProxy = 00C2C4321FE5C3F300721731 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00C2C4391FE5C3F300721731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		00C2C43A1FE5C3F300721731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		00C2C43C1FE5C3F300721731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TSKit.Injection/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-Injection";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00C2C43D1FE5C3F300721731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TSKit.Injection/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-Injection";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		00C2C43F1FE5C3F300721731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				INFOPLIST_FILE = TSKit.InjectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-InjectionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00C2C4401FE5C3F300721731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				INFOPLIST_FILE = TSKit.InjectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-InjectionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00C2C4211FE5C3F200721731 /* Build configuration list for PBXProject "TSKit.Injection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C2C4391FE5C3F300721731 /* Debug */,
+				00C2C43A1FE5C3F300721731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00C2C43B1FE5C3F300721731 /* Build configuration list for PBXNativeTarget "TSKit.Injection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C2C43C1FE5C3F300721731 /* Debug */,
+				00C2C43D1FE5C3F300721731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00C2C43E1FE5C3F300721731 /* Build configuration list for PBXNativeTarget "TSKit.InjectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C2C43F1FE5C3F300721731 /* Debug */,
+				00C2C4401FE5C3F300721731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00C2C41E1FE5C3F200721731 /* Project object */;
+}
