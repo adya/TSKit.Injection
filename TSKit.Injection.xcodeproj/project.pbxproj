@@ -10,7 +10,6 @@
 		0057DDA920139FF5002B8429 /* InjectionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDA820139FF5002B8429 /* InjectionRule.swift */; };
 		0057DDAB2013A115002B8429 /* InjectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDAA2013A115002B8429 /* InjectionError.swift */; };
 		0057DDAD2013A136002B8429 /* InjectionPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDAC2013A136002B8429 /* InjectionPreset.swift */; };
-		006182C8206046170079DD8C /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 006182C6206046170079DD8C /* Cartfile */; };
 		006182D720604AD10079DD8C /* TSKit_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006182D620604AD10079DD8C /* TSKit_Log.framework */; };
 		00C2C4311FE5C3F300721731 /* TSKit_Injection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2C4271FE5C3F200721731 /* TSKit_Injection.framework */; };
 		00C2C4361FE5C3F300721731 /* TSKit_InjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4351FE5C3F300721731 /* TSKit_InjectionTests.swift */; };
@@ -215,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006182C8206046170079DD8C /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
