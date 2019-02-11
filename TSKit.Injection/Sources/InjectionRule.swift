@@ -1,9 +1,9 @@
 /// Represents an injection rule. This defines how Injector should construct concrete object for specified protocol type.
-public class InjectionRule : CustomStringConvertible {
+public struct InjectionRule: CustomStringConvertible {
     
     internal typealias InjectionClosure = ((Any?) throws -> Any)
     
-    /// Intenral holder for the type of a protocol being injected.
+    /// Internal holder for the type of a protocol being injected.
     internal let protocolType : Any.Type
     
     /// Internal holder for the specific target type of the injection.
@@ -49,7 +49,7 @@ public class InjectionRule : CustomStringConvertible {
     /// - Parameter meta: Metadata of the injection represents type of the concrete object that will be injected.
     /// - Parameter injection: A closure to which type instantiation is delegated.
     /// - Parameter InjectableType: Type of injectable which must confrom to general Injectable protocol.
-    public convenience init<InjectableType> (injectable: InjectableType.Type,
+    public init<InjectableType> (injectable: InjectableType.Type,
                                  once: Bool = false,
                                  meta: Any.Type? = nil,
                                  injection: @escaping () throws -> InjectableType) {
@@ -67,7 +67,7 @@ public class InjectionRule : CustomStringConvertible {
     /// - Parameter once: Indicates whether the injection should reuse object created before or not.
     /// - Parameter meta: Metadata of the injection represents type of the concrete object that will be injected.
     /// - Parameter injection: A closure to which type instantiation is delegated.
-    public convenience init<InjectableType, DestinationType> (injectable: InjectableType.Type,
+    public init<InjectableType, DestinationType> (injectable: InjectableType.Type,
                                                   destinationType: DestinationType.Type,
                                                   once: Bool = false,
                                                   meta: Any.Type? = nil,
@@ -86,7 +86,7 @@ public class InjectionRule : CustomStringConvertible {
     /// - Parameter once: Indicates whether the injection should reuse object created before or not.
     /// - Parameter meta: Metadata of the injection represents type of the concrete object that will be injected.
     /// - Parameter injection: A closure to which type instantiation is delegated.
-    public convenience init<InjectableType, TargetType, DestinationType> (
+    public init<InjectableType, TargetType, DestinationType> (
         injectable: InjectableType.Type,
         targetType: TargetType.Type,
         destinationType: DestinationType.Type,
@@ -117,7 +117,7 @@ public class InjectionRule : CustomStringConvertible {
     /// - Parameter once: Indicates whether the injection should reuse object created before or not.
     /// - Parameter meta: Metadata of the injection represents type of the concrete object that will be injected.
     /// - Parameter injection: A closure to which type instantiation is delegated.
-    public convenience init<InjectableType, TargetType> (
+    public init<InjectableType, TargetType> (
         injectable: InjectableType.Type,
         targetType: TargetType.Type,
         once: Bool = false,
@@ -138,7 +138,7 @@ public class InjectionRule : CustomStringConvertible {
     /// - Parameter destinationType: Type of the injection destination object.
     /// - Parameter injected: A closure to which type instantiation is delegated.
     /// - Parameter meta: Metadata of the injection represents type of the concrete object that will be injected.
-    public convenience init<InjectableType, DestinationType> (
+    public init<InjectableType, DestinationType> (
         injectable: InjectableType.Type,
         destinationType: DestinationType.Type,
         meta: Any.Type? = nil,
@@ -153,7 +153,7 @@ public class InjectionRule : CustomStringConvertible {
     /// - Parameter injectable: Target protocol type to which this rule will be applied.
     /// - Parameter injected: A closure to which type instantiation is delegated.
     /// - Parameter meta: Metadata of the injection represents type of the concrete object that will be injected.
-    public convenience init<InjectableType> (
+    public init<InjectableType> (
         injectable: InjectableType.Type,
         meta: Any.Type? = nil,
         injected: @autoclosure @escaping () throws -> InjectableType) {

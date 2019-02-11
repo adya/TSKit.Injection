@@ -1,4 +1,4 @@
-/// Represents an error occured during injection.
+/// Represents an error occurred during injection.
 public enum InjectionError : Error {
     
     /// Represents failed attempt to cast provided parameter to the type required in the injection closure.

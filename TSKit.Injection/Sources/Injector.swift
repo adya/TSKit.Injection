@@ -26,7 +26,7 @@ public class Injector: Loggable {
     /// Replaces existing `InjectionRule`s with specified.
     /// - Parameter rules: An array of rules to be set.
     public static func configure(with rules: [InjectionRule]) {
-        rules.forEach { self.addInjectionRule($0) }
+        rules.forEach { self.add($0) }
     }
     
     /// Adds a single `InjectionRule` to existing rules.
@@ -130,7 +130,7 @@ public class Injector: Loggable {
         print("Configured injection rules: \n")
         self.rules
             .flatMap { $0.1.values }.flatMap { $0.values }
-            .sorted { "\($0.0.protocolType)".compare("\($0.1.protocolType)") == .orderedAscending }
+            .sorted { "\($0.protocolType)".compare("\($1.protocolType)") == .orderedAscending }
             .forEach { print("\($0)") }
     }
 }

@@ -67,6 +67,7 @@
 		00C2C41D1FE5C3F200721731 = {
 			isa = PBXGroup;
 			children = (
+				006182C6206046170079DD8C /* Cartfile */,
 				00C2C4291FE5C3F200721731 /* TSKit.Injection */,
 				00C2C4341FE5C3F300721731 /* TSKit.InjectionTests */,
 				00C2C4281FE5C3F200721731 /* Products */,
@@ -87,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				00C2C4E21FE5C4F400721731 /* Sources */,
-				006182C6206046170079DD8C /* Cartfile */,
 				00C2C42A1FE5C3F200721731 /* TSKit_Injection.h */,
 				00C2C42B1FE5C3F200721731 /* Info.plist */,
 			);
