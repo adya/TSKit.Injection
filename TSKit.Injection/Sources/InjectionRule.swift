@@ -165,6 +165,6 @@ public struct InjectionRule: CustomStringConvertible {
         self.init(injectable: injectable,
                   destinationType: Any.Type.self,
                   meta: meta,
-                  injected: injected)
+                  injected: try injected())
     }
 }
