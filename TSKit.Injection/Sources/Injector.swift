@@ -15,16 +15,21 @@ import TSKit_Log
  - Since:      11/03/2016
  - Author:     AdYa
  */
-public class Injector: Loggable {
+public class Injector {
     
     /// Internal property to store configured injection rules.
     fileprivate static var rules: [String : [String : [String : InjectionRule]]] = [:]
     
     fileprivate static var cache: [String : [String : [String : Any]]] = [:]
     
+    static let log: AnyLogger = {
+        let log = Logger()
+        return log
+    }()
+    
     /// Replaces existing `InjectionRule`s with specified in the preset.
     /// - Parameter preset: An array of rules to be set.
-    public static func configure(with preset: InjectionRulesPreset) {
+    public static func configure(with preset: InjectionPreset) {
         self.configure(with: preset.rules)
     }
     
