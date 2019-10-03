@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		000750A2212360FB00BBC7B5 /* InjectorQuickSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000750A1212360FB00BBC7B5 /* InjectorQuickSpec.swift */; };
+		002BD1F222A69B7D0000B268 /* TSKit_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006182D620604AD10079DD8C /* TSKit_Log.framework */; };
 		0057DDA920139FF5002B8429 /* InjectionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDA820139FF5002B8429 /* InjectionRule.swift */; };
 		0057DDAB2013A115002B8429 /* InjectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDAA2013A115002B8429 /* InjectionError.swift */; };
 		0057DDAD2013A136002B8429 /* InjectionPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057DDAC2013A136002B8429 /* InjectionPreset.swift */; };
 		006182D720604AD10079DD8C /* TSKit_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006182D620604AD10079DD8C /* TSKit_Log.framework */; };
+		00799D792346210F006384B6 /* TSKit_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00799D782346210F006384B6 /* TSKit_Core.framework */; };
 		00C2C4311FE5C3F300721731 /* TSKit_Injection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2C4271FE5C3F200721731 /* TSKit_Injection.framework */; };
 		00C2C4361FE5C3F300721731 /* TSKit_InjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4351FE5C3F300721731 /* TSKit_InjectionTests.swift */; };
 		00C2C4381FE5C3F300721731 /* TSKit_Injection.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C2C42A1FE5C3F200721731 /* TSKit_Injection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +37,7 @@
 		0057DDAC2013A136002B8429 /* InjectionPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionPreset.swift; sourceTree = "<group>"; };
 		006182C6206046170079DD8C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		006182D620604AD10079DD8C /* TSKit_Log.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSKit_Log.framework; path = Carthage/Build/iOS/TSKit_Log.framework; sourceTree = "<group>"; };
+		00799D782346210F006384B6 /* TSKit_Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSKit_Core.framework; path = Carthage/Build/iOS/TSKit_Core.framework; sourceTree = "<group>"; };
 		00C2C4271FE5C3F200721731 /* TSKit_Injection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSKit_Injection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C2C42A1FE5C3F200721731 /* TSKit_Injection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKit_Injection.h; sourceTree = "<group>"; };
 		00C2C42B1FE5C3F200721731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				006182D720604AD10079DD8C /* TSKit_Log.framework in Frameworks */,
+				00799D792346210F006384B6 /* TSKit_Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002BD1F222A69B7D0000B268 /* TSKit_Log.framework in Frameworks */,
 				00C2C4311FE5C3F300721731 /* TSKit_Injection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +123,7 @@
 		00CCB2831FE6BD4E00F1E75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00799D782346210F006384B6 /* TSKit_Core.framework */,
 				006182D620604AD10079DD8C /* TSKit_Log.framework */,
 			);
 			name = Frameworks;
@@ -429,8 +435,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TSKit.InjectionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-InjectionTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -444,8 +454,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TSKit.InjectionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-InjectionTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
