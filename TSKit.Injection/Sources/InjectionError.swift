@@ -1,7 +1,7 @@
-/// - Since: 01/20/2018
-/// - Author: Arkadii Hlushchevskyi
-/// - Copyright: © 2018. Arkadii Hlushchevskyi.
-/// - Seealso: https://github.com/adya/TSKit.Injection/blob/master/LICENSE.md
+// - Since: 01/20/2018
+// - Author: Arkadii Hlushchevskyi
+// - Copyright: © 2019. Arkadii Hlushchevskyi.
+// - Seealso: https://github.com/adya/TSKit.Injection/blob/master/LICENSE.md
 
 /// Represents an error occurred during injection.
 public enum InjectionError : Error {
