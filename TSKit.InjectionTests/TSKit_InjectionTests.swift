@@ -1,29 +1,38 @@
-//
-//  TSKit_InjectionTests.swift
-//  TSKit.InjectionTests
-//
-//  Created by Arkadiy Glushchevsky on 12/16/17.
-//  Copyright © 2017 Arkadiy Glushchevsky. All rights reserved.
-//
-
 import XCTest
 @testable import TSKit_Injection
 
 class TSKit_InjectionTests: XCTestCase {
     
     override func setUp() {
+        Injector.addInjectionRule(.init(injectable: Dummy.self, injected: Dummy()))
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        Injector.reset()
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testImplicitInjectionOfConcreteType() {
+        XCTAssertNoThrow({
+            let dummy: Dummy = try Injector.inject()
+            _ = dummy
+        })
+    }
+    
+    func testImplicitInjectionOfForcedType() {
+        XCTAssertNoThrow({
+            let dummy: Dummy! = try Injector.inject()
+            _ = dummy
+        })
+    }
+    
+    func testImplicitExplicitOfConcreteType() {
+        XCTAssertNoThrow(try Injector.inject(Dummy.self))
+    }
+    
+    func testImplicitExplicitOfForcedType() {
+        XCTAssertNoThrow(try Injector.inject(Dummy?.self))
     }
     
     func testPerformanceExample() {
@@ -32,5 +41,6 @@ class TSKit_InjectionTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
 }
+
+class Dummy {}
