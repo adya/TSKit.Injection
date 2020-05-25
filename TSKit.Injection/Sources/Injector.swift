@@ -124,8 +124,9 @@ public class Injector {
                                               with parameter: Any? = nil,
                                               for sender: Any.Type) throws -> InjectableType where InjectableType: Any {
         let target: Any.Type = parameter != nil ? type(of: parameter!) : Any.Type.self
-
-        let protocolType = String(describing: injectable)
+        
+        // Check if InjectableType is actually optional
+        let protocolType = String(describing: (injectable as? AnyOptional.Type)?.wrapped() ?? injectable)
         let targetType = String(describing: target)
         let destinationType = String(describing: sender)
         let defaultType = String(describing: Any.Type.self)
@@ -199,3 +200,16 @@ public class Injector {
     }
 }
 
+protocol AnyOptional {
+    
+    /// Access concrete type of optional.
+    static func wrapped() -> Any.Type
+}
+
+extension Optional: AnyOptional {
+    
+    static func wrapped() -> Any.Type {
+        Wrapped.self
+    }
+    
+}
