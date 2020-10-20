@@ -146,7 +146,8 @@ public class Injector {
 
         if rule.once,
            let targetCache = cache[protocolType]?[targetType] ?? cache[protocolType]?[defaultType],
-           let cached = (targetCache[destinationType] ?? targetCache[defaultType] as Any) as? InjectableType {
+           targetCache[destinationType] != nil, // Fix cased when InjectableType is Optional.
+           let cached = targetCache[destinationType] as? InjectableType {
             log.debug("Restored cached \(protocolType) with \(type(of: cached))")
             return cached
         }

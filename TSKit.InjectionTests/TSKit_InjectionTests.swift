@@ -47,8 +47,6 @@ class TSKit_InjectionTests: XCTestCase {
         } catch {
             XCTFail()
         }
-    
-        
     }
     
     func testExplicitInjectionForDesitnationType() {
@@ -63,8 +61,28 @@ class TSKit_InjectionTests: XCTestCase {
         } catch {
             XCTFail()
         }
+    }
     
-        
+    func testConflictingCacheForDesitnationType() {
+        Injector.addInjectionRule(.init(injectable: Dummy.self,
+                                        once: true) {
+            Dummy()
+        })
+        Injector.addInjectionRule(.init(injectable: Dummy.self,
+                                        destinationType: Desitnation.self,
+                                        once: true) {
+            DummyForDestination()
+        })
+        var commonDummy: Dummy!
+        var specialDummy: Dummy!
+        do {
+            commonDummy = try Injector.inject(Dummy.self)
+            specialDummy = try Injector.inject(for: Desitnation.self)
+            XCTAssertTrue(specialDummy is DummyForDestination)
+            XCTAssertTrue(commonDummy is Dummy)
+        } catch {
+            XCTFail()
+        }
     }
     
 }
