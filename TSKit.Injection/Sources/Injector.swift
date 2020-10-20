@@ -146,7 +146,8 @@ public class Injector {
 
         if rule.once,
            let targetCache = cache[protocolType]?[targetType] ?? cache[protocolType]?[defaultType],
-           let cached = (targetCache[destinationType] ?? targetCache[defaultType] as Any) as? InjectableType {
+           targetCache[destinationType] != nil, // Fix cased when InjectableType is Optional.
+           let cached = targetCache[destinationType] as? InjectableType {
             log.debug("Restored cached \(protocolType) with \(type(of: cached))")
             return cached
         }
@@ -180,13 +181,13 @@ public class Injector {
      */
     public static func inject<InjectableType: Any>(_ injectable: InjectableType.Type,
                                                    with parameter: Any? = nil,
-                                                   for sender: Any? = nil) throws -> InjectableType {
-        let sender = sender.flatMap { type(of: $0) } ?? Any.Type.self
+                                                   for sender: Any.Type? = nil) throws -> InjectableType {
+        let sender = sender ?? Any.Type.self
         return try inject(injectable, with: parameter, for: sender)
     }
 
     public static func inject<InjectableType: Any>(with parameter: Any? = nil,
-                                                   for sender: Any? = nil) throws -> InjectableType {
+                                                   for sender: Any.Type? = nil) throws -> InjectableType {
         return try inject(InjectableType.self, with: parameter, for: sender)
     }
 

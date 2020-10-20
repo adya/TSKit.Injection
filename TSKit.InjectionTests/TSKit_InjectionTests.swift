@@ -27,20 +27,68 @@ class TSKit_InjectionTests: XCTestCase {
         })
     }
     
-    func testImplicitExplicitOfConcreteType() {
+    func testExplicitInjectionOfConcreteType() {
         XCTAssertNoThrow(try Injector.inject(Dummy.self))
     }
     
-    func testImplicitExplicitOfForcedType() {
+    func testExplicitInjectionOfForcedType() {
         XCTAssertNoThrow(try Injector.inject(Dummy?.self))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testImplicitInjectionForDesitnationType() {
+        Injector.addInjectionRule(.init(injectable: Dummy.self, destinationType: Desitnation.self) {
+            DummyForDestination()
+        })
+        
+        var dummy: Dummy!
+        do {
+        dummy = try Injector.inject(for: Desitnation.self)
+            XCTAssertTrue(dummy is DummyForDestination)
+        } catch {
+            XCTFail()
         }
     }
+    
+    func testExplicitInjectionForDesitnationType() {
+        Injector.addInjectionRule(.init(injectable: Dummy.self, destinationType: Desitnation.self) {
+            DummyForDestination()
+        })
+        
+        var dummy: Dummy!
+        do {
+            dummy = try Injector.inject(Dummy.self, for: Desitnation.self)
+            XCTAssertTrue(dummy is DummyForDestination)
+        } catch {
+            XCTFail()
+        }
+    }
+    
+    func testConflictingCacheForDesitnationType() {
+        Injector.addInjectionRule(.init(injectable: Dummy.self,
+                                        once: true) {
+            Dummy()
+        })
+        Injector.addInjectionRule(.init(injectable: Dummy.self,
+                                        destinationType: Desitnation.self,
+                                        once: true) {
+            DummyForDestination()
+        })
+        var commonDummy: Dummy!
+        var specialDummy: Dummy!
+        do {
+            commonDummy = try Injector.inject(Dummy.self)
+            specialDummy = try Injector.inject(for: Desitnation.self)
+            XCTAssertTrue(specialDummy is DummyForDestination)
+            XCTAssertTrue(commonDummy is Dummy)
+        } catch {
+            XCTFail()
+        }
+    }
+    
 }
 
+class Desitnation {}
+
 class Dummy {}
+
+class DummyForDestination: Dummy {}
